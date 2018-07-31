@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="cart.css" type="text/css" />
+
+</head>
+
+<body>
+
+    <div>
+
+        <div class="leftdisplay">
+            <img src="logo1.jpg" width=75% height="180px" class="logoimg" />
+            <br/>
+            <input type=text id="ip" name="searcheditem" onkeyup="finding()" placeholder="Search The Product Here">
+
+            <br/>
+            <br/>
+
+
+            <table id="demo">
+
+            </table>
+
+            <button id="reset" onclick="reset1()">Reset</button>
+            <button id="add" onclick="additemtocart()">Add</button>
+        </div>
+
+
+
+        <div class="rightdisplay">
+            <img src="1.jpg" width=100% height="100px" class="cartimg" />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <table id="addtable" align="center"></table>
+            <p id="bill" align="center"></p>
+
+        <!--
+            <form id="checkout" action="checkout.html">
+                
+                <input type="submit" value="Checkout" onclick="billgeneration()">
+            </form>
+         -->
+
+
+         <button id ="checkout" onclick="billgeneration()" > Check Out</button></a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+<script type="text/javascript" src="cart.js"></script>
