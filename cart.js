@@ -249,6 +249,8 @@ function finding(){
            }
            var bill=0;
            var newtable = '<tr><th> Name</th><th>Quantity</th></tr>';
+           var new_table = '<tr><th> Name</th><th>Quantity</th><th></th></tr>';
+
            var count = 0;
            var additemtocart = () => {
            
@@ -259,6 +261,7 @@ function finding(){
             if (num > 0) {
             count++;
             newtable += '<tr><td>' + element.name + '</td><td>' + num + '</td></tr>'
+            // new_table += '<tr><td>' + element.name + '</td><td>' + num +"</td></tr>"
             bill += element.MRP*num;
 
             }
@@ -271,13 +274,14 @@ function finding(){
 
 function billgeneration() {
    
+  sessionStorage.setItem("table",newtable);
   sessionStorage.setItem("bill",bill);
   window.open("checkout.html");
 }
 function checkout(){
 
-    var newtable=sessionStorage.getItem("bill");
-    //console.log(newtable);
-
+    var newtable=sessionStorage.getItem("table");
+    var billg=sessionStorage.getItem("bill");    //console.log(newtable);
+    document.getElementById("billing").innerHTML = billg;
     document.getElementById("parag").innerHTML = newtable;
 }
